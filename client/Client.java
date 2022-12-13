@@ -15,6 +15,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
@@ -130,6 +131,7 @@ class ClientUI extends Frame {
 		super(winname); 
 		setSize(600, 400);
 		this.client = client;
+	
 		// テキスト表示画面
 		msgArea = new JTextArea(400, 400);
 		msgArea.setEditable(false);
@@ -161,6 +163,9 @@ class ClientUI extends Frame {
 
 		cntLabel = new JLabel("Online:1"); // オンライン人数
 		textFieldPanel.add(cntLabel);
+		
+		ImageIcon icon = new ImageIcon("C:\\workspace\\Test\\client\\icon.jpg");
+	    setIconImage(icon.getImage());
 		// 送信ボタンイベント
 		btn.addActionListener(new ActionListener() {
 			@Override
@@ -280,4 +285,5 @@ class ClientUI extends Frame {
 	public void append(String txt) {
 		msgArea.append(txt);
 	}
+	  
 }
